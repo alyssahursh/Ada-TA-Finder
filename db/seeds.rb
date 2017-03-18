@@ -6,7 +6,6 @@
 #   cities = City.create([name: 'Chicago', { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 15.times do
   User.create({
     first_name:             Faker::Name.first_name,
