@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :at_ada
       t.boolean :remote
       t.boolean :available
+      t.boolean :agreed_to_terms
 
       t.timestamps null: false
     end
