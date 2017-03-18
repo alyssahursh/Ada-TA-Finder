@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170318025040) do
     t.boolean  "remote"
     t.boolean  "available"
     t.boolean  "agreed_to_terms"
+    t.boolean  "student"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
