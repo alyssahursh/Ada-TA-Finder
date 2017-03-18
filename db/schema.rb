@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170318025040) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -27,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170318025040) do
     t.boolean  "at_ada"
     t.boolean  "remote"
     t.boolean  "available"
+    t.boolean  "agreed_to_terms"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

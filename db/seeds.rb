@@ -3,5 +3,25 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create([name: 'Chicago', { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+15.times do
+  User.create({
+    first_name:             Faker::Name.first_name,
+    last_name:              Faker::Name.last_name ,
+    pronouns:               "She/Her"             ,
+    physical_description:   Faker::Lorem.paragraph,
+    bio:                    Faker::Lorem.paragraph,
+    email:                  Faker::Internet.email ,
+    twitter:                Faker::Lorem.word     ,
+    screenhero:             Faker::Lorem.word     ,
+    company:                Faker::Lorem.word     ,
+    languages:              Faker::Lorem.paragraph,
+    at_ada:                 [true, false].sample  ,
+    remote:                 [true, false].sample  ,
+    available:              [true, false].sample  ,
+    agreed_to_terms:        true
+  })
+end
