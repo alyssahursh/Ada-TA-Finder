@@ -1,24 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tutors Here Today</h1>
 
-<section class="all-tutors">
-  <% @users.each do |user| %>
-    <% if user.at_ada || user.remote %>
-      <section class="one-tutor available-<%= user.available %>">
-        <p><%= user.first_name %> <%= user.last_name %></p>
-        <p>Pronouns: <%= user.pronouns %></p>
-        <p>Company: <%= user.company %></p>
-        <p>Languages: <%= user.languages %></p>
-        <p>Bio: <%= user.bio %></p>
-        <p>Description: <%= user.physical_description %></p>
-        <p>Email: <%= user.email %></p>
-        <p>Twitter: @<%= user.twitter %></p>
-        <p>Screenhero: <%= user.screenhero %></p>
-        <p>At Ada? <%= user.at_ada %></p>
-        <p>Remote? <%= user.remote %></p>
-        <p>Available? <%= user.available %></p>
-      </section>
+<div class="container">
+  <h1>Tutors Working Today</h1>
+  <section class="all-tutors row">
+    <% @users.each do |user| %>
+      <% if !user.student && user.at_ada || user.remote %>
+        <section class="one-tutor four columns available-<%= user.available %>">
+          <img src="http://placebeyonce.com/200-200" />
+          <% if user.available %>
+            <div>
+              AVAILABLE
+              <% if user.at_ada %>
+                AT ADA
+              <% else %>
+                REMOTELY
+              <% end %>
+            </div>
+          <% end %>
+          <h3><%= user.first_name %> <%= user.last_name %></h3>
+          <p class="pronoun"><%= user.pronouns %></p>
+          <% if user.at_ada %>
+            <p><b>Physical Identifier:</b> <%= user.physical_description %></p>
+          <% end %>
+          <% if user.remote %>
+            <p><b>How to Contact:</b> <%= user.physical_description %></p>
+          <% end %>
+        </section>
+      <% end %>
     <% end %>
-  <% end %>
-</section>
+  </section>
+</div>
+<footer>
+
+</footer>

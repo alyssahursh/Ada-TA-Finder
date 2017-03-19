@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+ /*
+ #db6251 pink
+ #95bdbe light blue
+ #4c868f blue
+ #252422 black
+ */
+
+h1 {
+  text-align: center;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  margin: 5rem;
+}
+
+.one-tutor {
+  border: 5px solid transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+  display: inline-block;
+  margin: 15px;
+  padding: 15px;
+  height: 480px;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+.available-true {
+  border: 5px solid #4c868f;
+  font-family: "Open Sans", sans-serif;
+
+}
+
+.available-true div {
+  background-color: #85b3b4;
+  border-radius: 3px;
+  display: inline-block;
+  color: white;
+  letter-spacing: 1.25px;
+  padding: 4px 10px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+img {
+  width: 90%;
+  margin: 5%;
+  border-radius: 100%;
+}
+
+h3 {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  margin-bottom: .2rem;
+}
+
+.pronoun {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+footer {
+  height: 100px;
+}
