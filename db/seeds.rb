@@ -7,19 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 15.times do
+  at_ada = [true, false].sample
   User.create({
     first_name:             Faker::Name.first_name,
     last_name:              Faker::Name.last_name,
-    pronouns:               "She/Her",
-    physical_description:   Faker::Lorem.paragraph,
+    pronouns:               ["She/Her", "He/Him", "She/Her/They/Them", "They/Them"].sample,
+    physical_description:   Faker::Lorem.sentence,
     bio:                    Faker::Lorem.paragraph,
     email:                  Faker::Internet.email,
     twitter:                Faker::Lorem.word,
     screenhero:             Faker::Lorem.word,
     company:                Faker::Lorem.word,
     languages:              Faker::Lorem.paragraph,
-    at_ada:                 [true, false].sample,
-    remote:                 [true, false].sample,
+    at_ada:                 at_ada,
+    remote:                 [!at_ada, false].sample,
     available:              [true, false].sample,
     agreed_to_terms:        true,
     student:                false
