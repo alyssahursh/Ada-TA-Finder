@@ -34,6 +34,10 @@ gem 'webmock'
 # For the cute little icons
 gem "font-awesome-rails"
 
+# For github login
+gem "omniauth"
+gem "omniauth-github"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
