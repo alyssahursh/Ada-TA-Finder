@@ -1,4 +1,4 @@
-# Ada TA Finder
+# Ada TA Finder 
 A small Rails application to help connect available Ada TAs and students with questions. In progress.
 
 ![Tutoring](/ada-tutors.png?raw=true "Tutoring")
