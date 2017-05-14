@@ -6,11 +6,11 @@
 #   cities = City.create([name: 'Chicago', { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-15.times do
+10.times do
   at_ada = [true, false].sample
+  uid = 1
   User.create({
-    first_name:             Faker::Name.first_name,
-    last_name:              Faker::Name.last_name,
+    name:             Faker::Name.name,
     pronouns:               ["She/Her", "He/Him", "She/Her/They/Them", "They/Them"].sample,
     physical_description:   Faker::Lorem.sentence,
     bio:                    Faker::Lorem.paragraph,
@@ -23,6 +23,9 @@
     remote:                 [!at_ada, false].sample,
     available:              [true, false].sample,
     agreed_to_terms:        true,
-    student:                false
+    student:                false,
+    provider:               "github",
+    uid:                    uid
   })
+  uid += 1
 end

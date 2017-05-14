@@ -1,10 +1,23 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :decision, :make_student, :make_tutor]
 
   # GET /users
   # GET /users.json
+
   def index
-    @users = User.all
+    @users = User.where(at_ada: true).or.where(remote: true).order("available DESC", "at_ada DESC").all
+
+    @encouragement = [
+      "Drink some water.",
+      "Call your person.",
+      "Take a stretch break.",
+      "Try talking it out with you rubber duck.",
+      "Ask a friend to listen to you talk through your problem.",
+      "Go for a short walk.",
+      "Put on your favorite music and take a little break.",
+      "Close your laptop for a few minutes.",
+      "Did you restart your server?"
+    ].sample
   end
 
   # GET /users/1
@@ -19,6 +32,23 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def decision
+  end
+
+  def make_student
+      @user.student = true
+      @user.save
+
+      redirect_to users_path
+  end
+
+  def make_tutor
+      @user.student = false
+      @user.save
+
+      redirect_to user_path(@user)
   end
 
   # POST /users
@@ -69,6 +99,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :twitter, :screenhero, :company, :languages, :pronouns, :at_ada, :remote, :available, :physical_description, :pronouns)
+      params.require(:user).permit(:name, :email, :twitter, :screenhero, :company, :languages, :pronouns, :at_ada, :remote, :available, :physical_description)
     end
 end

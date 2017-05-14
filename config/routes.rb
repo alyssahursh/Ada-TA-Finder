@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
-  root 'users#index'
 
-  resources :users
+  root 'pages#index'
+
+  get 'pages/index'
+
+  get "/auth/:provider/callback" =>  "sessions#create"
+
+  resources :users do
+    member do
+      get :flop_availability
+      get :make_student
+      get :make_tutor
+    end
+  end
+  get 'user/:id/decision', to: "users#decision", as: "decision"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

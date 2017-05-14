@@ -20,6 +20,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_record_or (1.0.1)
     activejob (4.2.7)
       activesupport (= 4.2.7)
       globalid (>= 0.3.0)
@@ -207,6 +208,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_record_or (~> 1.0, >= 1.0.1)
   awesome_print
   better_errors
   byebug

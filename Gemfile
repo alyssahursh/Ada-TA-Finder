@@ -47,6 +47,10 @@ gem "omniauth-github"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'active_record_or', '~> 1.0', '>= 1.0.1'
+
+
 group :development, :production do
   # Use faker for seeding placeholder user data
   gem "faker"

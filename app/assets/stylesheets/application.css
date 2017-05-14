@@ -77,3 +77,56 @@ h3 {
 footer {
   height: 100px;
 }
+
+.headspace {
+  height: 25vh;
+}
+
+input[type="submit"] {
+  background-color: #4c868f;
+  color: #FFF;
+  font: normal normal normal 1.75rem/1 "Open Sans", sans-serif;
+  letter-spacing: 3px;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+  height: auto;
+}
+
+input[type="submit"]:hover {
+  background-color: #95bdbe;
+  color: #FFF;
+}
+
+.decision div {
+  display: flex;
+}
+
+.decision div form {
+  flex-grow: 1;
+}
+
+.decision input {
+  width: 92%;
+  margin: 0 4%
+}
+
+.homepage {
+  text-align: center;
+}
+
+.homepage div {
+  margin: 20px;
+}
+
+.homepage div a {
+  color: #4c868f;
+  font-size: 1.75rem;
+
+}
+
+.homepage div a:hover,
+.homepage div a:visited {
+  color: #95bdbe
+}

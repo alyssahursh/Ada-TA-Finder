@@ -1,41 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
+  <%= @user.name %>
 </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @user.twitter %>
-</p>
-
-<p>
-  <strong>Screenhero:</strong>
-  <%= @user.screenhero %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
-
-<p>
-  <strong>Languages:</strong>
-  <%= @user.languages %>
-</p>
-
-<p>
   <strong>Pronouns:</strong>
   <%= @user.pronouns %>
 </p>
@@ -66,4 +34,3 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

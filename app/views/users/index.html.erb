@@ -1,36 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-
-<div class="container">
-  <h1>Tutors Working Today</h1>
-  <section class="all-tutors row">
-    <% @users.each do |user| %>
-      <% if !user.student && user.at_ada || user.remote %>
-        <section class="one-tutor four columns available-<%= user.available %>">
-          <img src="http://placebeyonce.com/200-200" />
-          <% if user.available %>
-            <div>
-              AVAILABLE
-              <% if user.at_ada %>
-                AT ADA
-              <% else %>
-                REMOTELY
-              <% end %>
-            </div>
-          <% end %>
-          <h3><%= user.first_name %> <%= user.last_name %></h3>
-          <p class="pronoun"><%= user.pronouns %></p>
-          <% if user.at_ada %>
-            <p><b>Physical Identifier:</b> <%= user.physical_description %></p>
-          <% end %>
-          <% if user.remote %>
-            <p><b>How to Contact:</b> <%= user.physical_description %></p>
-          <% end %>
-        </section>
+<% if @users.length == 0 %>
+  <div class="headspace"></div>
+  <div class="container">
+    <h1>There are no tutors working right now. </h1>
+    <h1><%= @encouragement %></h1>
+  </div>
+<% else %>
+  <div class="container">
+    <h1>Tutors Working Right Now</h1>
+    <section class="all-tutors row">
+      <% @users.each do |user| %>
+        <% if user.student == false && ( user.at_ada || user.remote ) %>
+          <section class="one-tutor four columns available-<%= user.available %>">
+            <img src="assets/beyonce.jpg" />
+            <% if user.available %>
+              <div>
+                AVAILABLE
+                <% if user.at_ada %>
+                  AT ADA
+                <% else %>
+                  REMOTELY
+                <% end %>
+              </div>
+            <% end %>
+            <h3><%= user.name %></h3>
+            <p class="pronoun"><%= user.pronouns %></p>
+            <% if user.at_ada %>
+              <p><b>Physical Identifier:</b> <%= user.physical_description %></p>
+            <% end %>
+            <% if user.remote %>
+              <p><b>How to Contact:</b> <%= user.physical_description %></p>
+            <% end %>
+          </section>
+        <% end %>
       <% end %>
-    <% end %>
-  </section>
-</div>
+    </section>
+  </div>
+<% end %>
 <footer>
 
 </footer>
+
+<script>
+  setTimeout("location.reload(true);", 20000);
+</script>

@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 20170318025040) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "pronouns"
     t.text     "physical_description"
     t.text     "bio"
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170318025040) do
     t.boolean  "available"
     t.boolean  "agreed_to_terms"
     t.boolean  "student"
+    t.integer  "uid",                  null: false
+    t.string   "provider",             null: false
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
